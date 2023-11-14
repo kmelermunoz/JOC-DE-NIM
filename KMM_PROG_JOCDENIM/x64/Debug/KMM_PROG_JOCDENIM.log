@@ -1,0 +1,3 @@
+﻿  KMM_PROG_JOCDENIM.cpp
+E:\AluCiclesGS1\KMM 1r\PROG\KMM_PROG_JOCDENIM\KMM_PROG_JOCDENIM\KMM_PROG_JOCDENIM.cpp(8,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  KMM_PROG_JOCDENIM.vcxproj -> E:\AluCiclesGS1\KMM 1r\PROG\KMM_PROG_JOCDENIM\x64\Debug\KMM_PROG_JOCDENIM.exe
