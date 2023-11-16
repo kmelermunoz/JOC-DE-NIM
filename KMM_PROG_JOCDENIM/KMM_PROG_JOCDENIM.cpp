@@ -1,3 +1,4 @@
+// Implementació de llibreries
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -5,15 +6,20 @@
 using namespace std;
 
 int main() {
+    // Inicialització de la llavor per a generar nombres aleatoris
     srand(time(0));
 
+    // Missatges de benvinguda i introducció al joc
     cout << "BENVINGUT AL JOC NIM!" << endl;
     cout << "Hi ha 3 muntanyes de pedres amb 3, 4 i 5 pedres respectivament." << endl;
     cout << "Guanya el jugador que retiri l'última pedra!" << endl;
 
+    // Inicialització de les piles de pedres a cada muntanya
     int piles[] = { 3, 4, 5 };
 
+    // Bucle principal del joc
     while (true) {
+        // Mostra l'estat actual del joc (quantitat de pedres a cada muntanya)
         cout << "\nEstat actual del joc: ";
         for (int i = 0; i < 3; ++i) {
             cout << piles[i] << " ";
@@ -25,6 +31,7 @@ int main() {
         cout << "El teu torn - Escull una muntanya (0, 1, 2): ";
         cin >> pileIndex;
 
+        // Verifica la validesa del moviment del jugador
         if (pileIndex < 0 || pileIndex >= 3 || piles[pileIndex] == 0) {
             cout << "Moviment invàlid! Torna-ho a provar." << endl;
             continue;
@@ -38,9 +45,10 @@ int main() {
             continue;
         }
 
+        // Actualitza l'estat de la muntanya després del moviment del jugador
         piles[pileIndex] -= stonesToRemove;
 
-        // Verificar si el jugador ha guanyat
+        // Verifica si el jugador ha guanyat
         if (piles[0] == 0 && piles[1] == 0 && piles[2] == 0) {
             cout << "Felicitats! Has guanyat!" << endl;
             break;
@@ -52,9 +60,10 @@ int main() {
 
         cout << "La computadora retira " << compStones << " pedres de la muntanya " << compPile << endl;
 
+        // Actualitza l'estat de la muntanya després del moviment de la computadora
         piles[compPile] -= compStones;
 
-        // Verificar si la computadora ha guanyat
+        // Verifica si la computadora ha guanyat
         if (piles[0] == 0 && piles[1] == 0 && piles[2] == 0) {
             cout << "La computadora guanya! Sort en la propera." << endl;
             break;
